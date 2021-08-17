@@ -19,7 +19,6 @@ export class PostService {
 
     delete = async (id: any) => {
         console.log(id);
-        // const deletedPost = await UserModel.findOneAndDelete(id);
     };
 
     like = async (id: any) => {
