@@ -96,9 +96,10 @@ var PostController = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, this.postService.delete(req.body._id)];
+                        return [4 /*yield*/, this.postService.delete(req.body, req.headers.authorization)];
                     case 1:
                         deletedPost = _a.sent();
+                        res.json(deletedPost);
                         return [3 /*break*/, 3];
                     case 2:
                         err_3 = _a.sent();
