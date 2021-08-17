@@ -6,6 +6,7 @@ export class PostController {
     private postService: PostService = new PostService();
     constructor() {}
 
+    //  CREATE POST
     create = async (req: Request, res: Response) => {
         try {
             let createdPost = await this.postService.create(
@@ -18,6 +19,7 @@ export class PostController {
         }
     };
 
+    //  LIKE POST
     like = async (req: Request, res: Response) => {
         const postId = req.body._id;
         let action = "like";
@@ -37,6 +39,7 @@ export class PostController {
         }
     };
 
+    // DELETE POST
     delete = async (req: Request, res: Response) => {
         try {
             const deletedPost = await this.postService.delete(
