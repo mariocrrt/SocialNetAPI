@@ -21,3 +21,4 @@ An admin has access to each of the functionalities above, except for modyfing a 
 
 ### Tech stack
 SocialNetAPI is being developed using Node.js, Express, and MongoDB. 
+Everything is written in TypeScript.
