@@ -18,11 +18,6 @@ export class PostService {
     };
 
     delete = async (post: any, token: string) => {
-        console.log(token);
-        console.log(post._id);
-        console.log(post.title);
-        console.log(post.description);
-
         const deletedPost = await UserModel.updateOne(
             {
                 $and: [{ _id: token }, { "posts._id": post._id }],
