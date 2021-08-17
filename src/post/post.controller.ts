@@ -20,7 +20,7 @@ export class PostController {
 
     like = async (req: Request, res: Response) => {
         const postId = req.body._id;
-        let action = "unlike";
+        let action = "like";
 
         try {
             if (action === "like") {
@@ -32,6 +32,14 @@ export class PostController {
 
                 return res.json(unlikedPost);
             }
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
+    delete = async (req: Request, res: Response) => {
+        try {
+            const deletedPost = await this.postService.delete(req.body._id);
         } catch (err) {
             console.error(err);
         }

@@ -17,6 +17,11 @@ export class PostService {
         return newPost;
     };
 
+    delete = async (id: any) => {
+        console.log(id);
+        // const deletedPost = await UserModel.findOneAndDelete(id);
+    };
+
     like = async (id: any) => {
         const likedPosts = await UserModel.findOneAndUpdate(
             { "posts._id": id },

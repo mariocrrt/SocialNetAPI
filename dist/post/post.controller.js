@@ -66,7 +66,7 @@ var PostController = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         postId = req.body._id;
-                        action = "unlike";
+                        action = "like";
                         _a.label = 1;
                     case 1:
                         _a.trys.push([1, 6, , 7]);
@@ -87,6 +87,24 @@ var PostController = /** @class */ (function () {
                         console.error(err_2);
                         return [3 /*break*/, 7];
                     case 7: return [2 /*return*/];
+                }
+            });
+        }); };
+        this.delete = function (req, res) { return __awaiter(_this, void 0, void 0, function () {
+            var deletedPost, err_3;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.postService.delete(req.body._id)];
+                    case 1:
+                        deletedPost = _a.sent();
+                        return [3 /*break*/, 3];
+                    case 2:
+                        err_3 = _a.sent();
+                        console.error(err_3);
+                        return [3 /*break*/, 3];
+                    case 3: return [2 /*return*/];
                 }
             });
         }); };

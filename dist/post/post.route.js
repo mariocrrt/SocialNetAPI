@@ -32,7 +32,7 @@ var PostRoute = /** @class */ (function () {
         };
         this._routes.post("/create", this.controller.create);
         this._routes.put("/like", this.controller.like);
-        // this._routes.put("/unlike", this.controller.unlike);
+        this._routes.delete("/delete", this.controller.delete);
     }
     return PostRoute;
 }());

@@ -20,7 +20,6 @@ export class UserService {
     };
 
     create = async (user: User) => {
-        console.log(user);
         const usernameExists = await UserModel.countDocuments({
             username: user.username,
         });
@@ -77,7 +76,6 @@ export class UserService {
     };
 
     delete = async (token: any) => {
-        console.log(token);
         const deletedUser = await UserModel.findOneAndDelete(token);
         return deletedUser;
     };

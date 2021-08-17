@@ -56,6 +56,12 @@ var PostService = /** @class */ (function () {
                 }
             });
         }); };
+        this.delete = function (id) { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                console.log(id);
+                return [2 /*return*/];
+            });
+        }); };
         this.like = function (id) { return __awaiter(_this, void 0, void 0, function () {
             var likedPosts;
             return __generator(this, function (_a) {

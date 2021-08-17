@@ -69,11 +69,9 @@ var UserService = /** @class */ (function () {
             var usernameExists, newUser, savedUser;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        console.log(user);
-                        return [4 /*yield*/, user_1.UserModel.countDocuments({
-                                username: user.username,
-                            })];
+                    case 0: return [4 /*yield*/, user_1.UserModel.countDocuments({
+                            username: user.username,
+                        })];
                     case 1:
                         usernameExists = _a.sent();
                         console.log(usernameExists);
@@ -163,9 +161,7 @@ var UserService = /** @class */ (function () {
             var deletedUser;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        console.log(token);
-                        return [4 /*yield*/, user_1.UserModel.findOneAndDelete(token)];
+                    case 0: return [4 /*yield*/, user_1.UserModel.findOneAndDelete(token)];
                     case 1:
                         deletedUser = _a.sent();
                         return [2 /*return*/, deletedUser];
