@@ -30,6 +30,18 @@ export class PostController {
         }
     };
 
+    //  DELETE COMMENT
+    deletecomment = async (req: Request, res: Response) => {
+        try {
+            const deletedComment = await this.postService.deletecomment(
+                req.body,
+                req.headers.authorization as string
+            );
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
     //  LIKE/UNLIKE POST
     like = async (req: Request, res: Response) => {
         const postId = req.body._id;

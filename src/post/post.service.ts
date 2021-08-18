@@ -30,6 +30,22 @@ export class PostService {
         return newComment;
     };
 
+    deletecomment = async (post: any, token: string) => {
+        const deletedComment = await UserModel.updateOne(
+            { "posts._id": post._id },
+            {
+                $pull: {
+                    posts: {
+                        title: post.title,
+                        description: post.description,
+                    },
+                },
+            }
+        );
+
+        return deletedComment;
+    };
+
     update = async (post: any, token: string) => {
         const updatedPost = await UserModel.updateOne(
             {

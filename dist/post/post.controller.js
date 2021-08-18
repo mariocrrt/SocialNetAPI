@@ -80,9 +80,28 @@ var PostController = /** @class */ (function () {
                 }
             });
         }); };
+        //  DELETE COMMENT
+        this.deletecomment = function (req, res) { return __awaiter(_this, void 0, void 0, function () {
+            var deletedComment, err_3;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.postService.deletecomment(req.body, req.headers.authorization)];
+                    case 1:
+                        deletedComment = _a.sent();
+                        return [3 /*break*/, 3];
+                    case 2:
+                        err_3 = _a.sent();
+                        console.error(err_3);
+                        return [3 /*break*/, 3];
+                    case 3: return [2 /*return*/];
+                }
+            });
+        }); };
         //  LIKE/UNLIKE POST
         this.like = function (req, res) { return __awaiter(_this, void 0, void 0, function () {
-            var postId, action, likedPost, unlikedPost, err_3;
+            var postId, action, likedPost, unlikedPost, err_4;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -104,8 +123,8 @@ var PostController = /** @class */ (function () {
                         return [2 /*return*/, res.json(unlikedPost)];
                     case 5: return [3 /*break*/, 7];
                     case 6:
-                        err_3 = _a.sent();
-                        console.error(err_3);
+                        err_4 = _a.sent();
+                        console.error(err_4);
                         return [3 /*break*/, 7];
                     case 7: return [2 /*return*/];
                 }
@@ -113,7 +132,7 @@ var PostController = /** @class */ (function () {
         }); };
         //  UPDATE POST
         this.update = function (req, res) { return __awaiter(_this, void 0, void 0, function () {
-            var updatedPost, err_4;
+            var updatedPost, err_5;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -124,8 +143,8 @@ var PostController = /** @class */ (function () {
                         res.json(updatedPost);
                         return [3 /*break*/, 3];
                     case 2:
-                        err_4 = _a.sent();
-                        console.error(err_4);
+                        err_5 = _a.sent();
+                        console.error(err_5);
                         return [3 /*break*/, 3];
                     case 3: return [2 /*return*/];
                 }
@@ -133,7 +152,7 @@ var PostController = /** @class */ (function () {
         }); };
         // DELETE POST
         this.delete = function (req, res) { return __awaiter(_this, void 0, void 0, function () {
-            var deletedPost, err_5;
+            var deletedPost, err_6;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -144,8 +163,8 @@ var PostController = /** @class */ (function () {
                         res.json(deletedPost);
                         return [3 /*break*/, 3];
                     case 2:
-                        err_5 = _a.sent();
-                        console.error(err_5);
+                        err_6 = _a.sent();
+                        console.error(err_6);
                         return [3 /*break*/, 3];
                     case 3: return [2 /*return*/];
                 }

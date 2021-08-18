@@ -71,6 +71,24 @@ var PostService = /** @class */ (function () {
                 }
             });
         }); };
+        this.deletecomment = function (post, token) { return __awaiter(_this, void 0, void 0, function () {
+            var deletedComment;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, user_1.UserModel.updateOne({ "posts._id": post._id }, {
+                            $pull: {
+                                posts: {
+                                    title: post.title,
+                                    description: post.description,
+                                },
+                            },
+                        })];
+                    case 1:
+                        deletedComment = _a.sent();
+                        return [2 /*return*/, deletedComment];
+                }
+            });
+        }); };
         this.update = function (post, token) { return __awaiter(_this, void 0, void 0, function () {
             var updatedPost;
             return __generator(this, function (_a) {
