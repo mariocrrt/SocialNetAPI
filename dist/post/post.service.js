@@ -56,6 +56,21 @@ var PostService = /** @class */ (function () {
                 }
             });
         }); };
+        this.comment = function (body) { return __awaiter(_this, void 0, void 0, function () {
+            var newComment;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, user_1.UserModel.findOneAndUpdate({ "posts._id": body._id }, {
+                            $push: {
+                                "posts.$.comments": body.comment,
+                            },
+                        })];
+                    case 1:
+                        newComment = _a.sent();
+                        return [2 /*return*/, newComment];
+                }
+            });
+        }); };
         this.update = function (post, token) { return __awaiter(_this, void 0, void 0, function () {
             var updatedPost;
             return __generator(this, function (_a) {

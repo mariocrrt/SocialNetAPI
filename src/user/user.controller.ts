@@ -33,9 +33,7 @@ export class UserController {
     //  LOGIN
     login = async (req: Request, res: Response) => {
         try {
-            console.log(req.body);
             let user: User = await this.userService.login(req.body);
-            console.log(user);
 
             if (user) {
                 return res.json("login!");

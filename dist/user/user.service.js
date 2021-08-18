@@ -74,8 +74,6 @@ var UserService = /** @class */ (function () {
                         })];
                     case 1:
                         usernameExists = _a.sent();
-                        console.log(usernameExists);
-                        console.log(user.username);
                         if (usernameExists === 1) {
                             console.log("invalid username");
                         }
@@ -91,12 +89,10 @@ var UserService = /** @class */ (function () {
             var userInfo;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        console.log("service: " + user.email, user.password);
-                        return [4 /*yield*/, user_1.UserModel.findOne({
-                                email: user.email,
-                                password: user.password,
-                            })];
+                    case 0: return [4 /*yield*/, user_1.UserModel.findOne({
+                            email: user.email,
+                            password: user.password,
+                        })];
                     case 1:
                         userInfo = _a.sent();
                         return [2 /*return*/, userInfo];

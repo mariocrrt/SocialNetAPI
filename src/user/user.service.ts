@@ -23,8 +23,6 @@ export class UserService {
         const usernameExists = await UserModel.countDocuments({
             username: user.username,
         });
-        console.log(usernameExists);
-        console.log(user.username);
         if (usernameExists === 1) {
             console.log("invalid username");
         }
@@ -34,7 +32,6 @@ export class UserService {
     };
 
     login = async (user: User) => {
-        console.log("service: " + user.email, user.password);
         const userInfo = await UserModel.findOne({
             email: user.email,
             password: user.password,

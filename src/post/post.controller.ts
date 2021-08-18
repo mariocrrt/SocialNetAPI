@@ -19,6 +19,17 @@ export class PostController {
         }
     };
 
+    //  COMMENT POST
+    comment = async (req: Request, res: Response) => {
+        try {
+            const comment = await this.postService.comment(req.body);
+
+            return res.json(comment);
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
     //  LIKE/UNLIKE POST
     like = async (req: Request, res: Response) => {
         const postId = req.body._id;

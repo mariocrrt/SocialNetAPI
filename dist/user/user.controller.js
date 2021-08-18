@@ -87,11 +87,9 @@ var UserController = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        console.log(req.body);
                         return [4 /*yield*/, this.userService.login(req.body)];
                     case 1:
                         user = _a.sent();
-                        console.log(user);
                         if (user) {
                             return [2 /*return*/, res.json("login!")];
                         }

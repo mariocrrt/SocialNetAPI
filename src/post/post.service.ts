@@ -17,6 +17,19 @@ export class PostService {
         return newPost;
     };
 
+    comment = async (body: any) => {
+        const newComment = await UserModel.findOneAndUpdate(
+            { "posts._id": body._id },
+            {
+                $push: {
+                    "posts.$.comments": body.comment,
+                },
+            }
+        );
+
+        return newComment;
+    };
+
     update = async (post: any, token: string) => {
         const updatedPost = await UserModel.updateOne(
             {
