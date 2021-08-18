@@ -17,6 +17,22 @@ export class PostService {
         return newPost;
     };
 
+    update = async (post: any, token: string) => {
+        const updatedPost = await UserModel.updateOne(
+            {
+                $and: [{ _id: token }, { "posts._id": post._id }],
+            },
+            {
+                $set: {
+                    "posts.$.title": post.title,
+                    "posts.$.description": post.description,
+                },
+            }
+        );
+
+        return updatedPost;
+    };
+
     delete = async (post: any, token: string) => {
         const deletedPost = await UserModel.updateOne(
             {

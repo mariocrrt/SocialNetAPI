@@ -19,7 +19,7 @@ export class PostController {
         }
     };
 
-    //  LIKE POST
+    //  LIKE/UNLIKE POST
     like = async (req: Request, res: Response) => {
         const postId = req.body._id;
         let action = "like";
@@ -34,6 +34,20 @@ export class PostController {
 
                 return res.json(unlikedPost);
             }
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
+    //  UPDATE POST
+    update = async (req: Request, res: Response) => {
+        try {
+            const updatedPost = await this.postService.update(
+                req.body,
+                req.headers.authorization as string
+            );
+
+            res.json(updatedPost);
         } catch (err) {
             console.error(err);
         }

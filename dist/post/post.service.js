@@ -56,24 +56,37 @@ var PostService = /** @class */ (function () {
                 }
             });
         }); };
+        this.update = function (post, token) { return __awaiter(_this, void 0, void 0, function () {
+            var updatedPost;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, user_1.UserModel.updateOne({
+                            $and: [{ _id: token }, { "posts._id": post._id }],
+                        }, {
+                            $set: {
+                                "posts.$.title": post.title,
+                                "posts.$.description": post.description,
+                            },
+                        })];
+                    case 1:
+                        updatedPost = _a.sent();
+                        return [2 /*return*/, updatedPost];
+                }
+            });
+        }); };
         this.delete = function (post, token) { return __awaiter(_this, void 0, void 0, function () {
             var deletedPost;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        console.log(token);
-                        console.log(post._id);
-                        console.log(post.title);
-                        console.log(post.description);
-                        return [4 /*yield*/, user_1.UserModel.updateOne({
-                                $and: [{ _id: token }, { "posts._id": post._id }],
-                            }, {
-                                $pull: {
-                                    posts: {
-                                        _id: post._id,
-                                    },
+                    case 0: return [4 /*yield*/, user_1.UserModel.updateOne({
+                            $and: [{ _id: token }, { "posts._id": post._id }],
+                        }, {
+                            $pull: {
+                                posts: {
+                                    _id: post._id,
                                 },
-                            })];
+                            },
+                        })];
                     case 1:
                         deletedPost = _a.sent();
                         return [2 /*return*/, deletedPost];
