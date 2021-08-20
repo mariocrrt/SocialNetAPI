@@ -90,6 +90,7 @@ var PostController = /** @class */ (function () {
                         return [4 /*yield*/, this.postService.deletecomment(req.body, req.headers.authorization)];
                     case 1:
                         deletedComment = _a.sent();
+                        res.json(deletedComment);
                         return [3 /*break*/, 3];
                     case 2:
                         err_3 = _a.sent();
@@ -150,7 +151,7 @@ var PostController = /** @class */ (function () {
                 }
             });
         }); };
-        // DELETE POST
+        //  DELETE POST
         this.delete = function (req, res) { return __awaiter(_this, void 0, void 0, function () {
             var deletedPost, err_6;
             return __generator(this, function (_a) {

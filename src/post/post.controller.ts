@@ -37,6 +37,8 @@ export class PostController {
                 req.body,
                 req.headers.authorization as string
             );
+
+            res.json(deletedComment);
         } catch (err) {
             console.error(err);
         }
@@ -76,7 +78,7 @@ export class PostController {
         }
     };
 
-    // DELETE POST
+    //  DELETE POST
     delete = async (req: Request, res: Response) => {
         try {
             const deletedPost = await this.postService.delete(
