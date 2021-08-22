@@ -20,12 +20,15 @@ export class UserService {
     };
 
     create = async (user: User) => {
+        // REMOVE CODE BETWEEN COMMENTS
+        // REDUNDANT - ALREADY CHECKING FOR USER ON CHECKREGISTRATION ABOVE
         const usernameExists = await UserModel.countDocuments({
             username: user.username,
         });
         if (usernameExists === 1) {
             console.log("invalid username");
         }
+        // REMOVE PROBABLY
         const newUser = new UserModel(user);
         const savedUser: User = await newUser.save();
         return savedUser;
