@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no tests installed\" && exit 1",
         "build": "tsc",
-        "start": "nodemon ./dist/server.js & tsc --watch & npm start --prefix client"
+        "start": "nodemon ./dist/server.js & tsc --watch & npm start --prefix client/client "
     },
     "keywords": [],
     "author": "",
